@@ -1,0 +1,66 @@
+body {
+    margin: 0; background: radial-gradient(circle at 50% 50%, #1a1a24 0%, #050505 80%);
+    color: white; font-family: 'Prompt', sans-serif; overflow: hidden;
+    height: 100vh; display: flex; justify-content: center; align-items: center; touch-action: none;
+}
+canvas { position: absolute; top: 0; left: 0; pointer-events: none; }
+#shadowCanvas { z-index: 5; }
+#white-flash {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: white; z-index: 999; opacity: 0; pointer-events: none; transition: opacity 1s ease-out;
+}
+.main-stage { z-index: 10; width: 100%; text-align: center; }
+.text-info h1 {
+    font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); margin: 0;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.text-info p { color: #aaa; margin-top: 10px; }
+
+.gift-container { position: relative; width: 260px; margin: 0 auto 40px; }
+.gift-box {
+    width: 220px; height: 220px; 
+    background: linear-gradient(145deg, #f4b41a, #d49a00);
+    margin: 0 auto; position: relative; border-radius: 8px; overflow: hidden;
+    animation: floating 4s infinite ease-in-out;
+    box-shadow: 0 40px 60px rgba(0,0,0,0.6), inset -5px -5px 15px rgba(0,0,0,0.2), inset 5px 5px 15px rgba(255,255,255,0.3);
+}
+
+.ribbon-v { 
+    position: absolute; width: 45px; height: 100%; 
+    background: linear-gradient(to right, #9d1d27, #e63946, #9d1d27);
+    left: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.ribbon-h { 
+    position: absolute; width: 100%; height: 45px; 
+    background: linear-gradient(to bottom, #9d1d27, #e63946, #9d1d27);
+    top: 50%; transform: translateY(-50%); box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.luxury-red-bow {
+    position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 10;
+    filter: drop-shadow(0 8px 8px rgba(0,0,0,0.5));
+}
+.bow-center {
+    width: 40px; height: 35px; background: radial-gradient(circle at 30% 30%, #ff5f6d, #e63946, #9d1d27);
+    border-radius: 12px; position: absolute; top: -17px; left: -20px; z-index: 5;
+}
+.bow-loop {
+    width: 85px; height: 65px; background: linear-gradient(135deg, #ff5f6d, #e63946 50%, #9d1d27);
+    position: absolute; top: -45px; z-index: 2; border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+}
+.bow-loop.left { left: -82px; transform: rotate(-15deg); }
+.bow-loop.right { right: -82px; transform: rotate(15deg) scaleX(-1); }
+
+#giftCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
+.health-bar { width: 200px; height: 6px; background: rgba(0,0,0,0.6); margin: 30px auto 0; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
+#health-fill { width: 0%; height: 100%; background: #fcf6ba; box-shadow: 0 0 15px #bf953f; transition: width 0.1s linear; }
+
+.black-cutter { position: fixed; width: 16px; height: 110px; z-index: 100; transform: rotate(35deg); cursor: none; filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));}
+.cutter-body { width: 100%; height: 85px; background: #1a1a1a; border-radius: 4px; position: relative; border: 1px solid #333; }
+.blade { width: 11px; height: 35px; background: linear-gradient(90deg, #888, #ddd, #888); margin: 0 auto; clip-path: polygon(0 0, 100% 35%, 100% 100%, 0% 100%); }
+.slider { position: absolute; width: 60%; height: 18px; background: #000; left: 20%; top: 20px; border-radius: 2px; }
+
+@keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+.shake { animation: shake 0.05s infinite; }
+@keyframes shake { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(3px, 3px); } }
