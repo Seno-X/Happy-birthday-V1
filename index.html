@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>happy birthday to you</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+    <canvas id="shadowCanvas"></canvas>
+    <div id="white-flash"></div>
+
+    <div class="main-stage">
+        <div class="gift-container" id="gift-container">
+            <div id="gift-box" class="gift-box">
+                <div class="luxury-red-bow">
+                    <div class="bow-loop left"></div>
+                    <div class="bow-loop right"></div>
+                    <div class="bow-center"></div>
+                </div>
+                <div class="ribbon-v"></div>
+                <div class="ribbon-h"></div>
+                <canvas id="giftCanvas"></canvas>
+            </div>
+            <div class="health-bar"><div id="health-fill"></div></div>
+        </div>
+
+        <div class="text-info">
+            <h1 id="msg-main">FOR YOU</h1>
+            <p id="msg-sub">ไล่จับคัตเตอร์ให้ได้ แล้วกรีดมันซะ!</p>
+        </div>
+
+        <div id="cutter" class="black-cutter">
+            <div class="blade"></div>
+            <div class="cutter-body"><div class="slider"></div></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+  </html>
+  
